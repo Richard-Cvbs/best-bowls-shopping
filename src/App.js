@@ -1,22 +1,38 @@
 import './App.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import '../node_modules/bootstrap-icons/font/bootstrap-icons.css'
-
+import { Navbar,Nav,Container, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css'
 function App() {
   return (
-    <div className="App">
-    <nav className="navbar m-1 navbar-light bg-light">
-      <div className="container-fluid">
-        <span className='text-secondary fw-bold'>
-          <i className="bi bi-egg-fried"></i>
-          <a className="navbar-brand ms-1" href="#">Best In Bowls!!</a>
+    <div>
+      <Navbar bg="light" expand="md">
+        <Container>
+      <Navbar.Brand href="#home">
+        <span>
+          <i className="bi bi-egg-fried me-1"></i>
+            Best Bowls!
         </span>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id='main-nav'></div>
-      </div>
-    </nav>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="main-navbar" />
+      <Navbar.Collapse className='justify-content-end' id="main-navbar">
+        <Nav>
+          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#link">Contact</Nav.Link>
+          <Nav.Link className='d-md-none' href="#link">
+            <i className="bi bi-cart me-1"></i>
+            Cart</Nav.Link>
+          <Button className='d-none d-md-inline' variant="success">
+          <i className="bi bi-cart me-1"></i>
+            Cart</Button>
+        </Nav>
+      </Navbar.Collapse>
+        </Container>
+        
+      </Navbar>
+      <Container fluid>
+      <h2 className="bg-success p-1 text-warning text-center text-decoration-underline">Pick your preffered Bowls!!</h2>
+        </Container>
+      
     </div>
   );
 }

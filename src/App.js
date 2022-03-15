@@ -2,6 +2,9 @@ import './App.css';
 import { Navbar,Nav,Container, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'
+
+import CardContent from './components/CardContent';
+
 function App() {
   return (
     <div>
@@ -32,7 +35,9 @@ function App() {
       <Container fluid>
       <h2 className="bg-success p-1 text-warning text-center text-decoration-underline">Pick your preffered Bowls!!</h2>
         </Container>
-      
+      <Container>
+      <CardContent/>
+      </Container>
     </div>
   );
 }

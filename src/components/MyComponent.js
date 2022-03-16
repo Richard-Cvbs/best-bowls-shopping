@@ -3,7 +3,7 @@ import { Button, Card, Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyCardItem from "./MyCardItem";
 
-function MyComponent({allItemsArray}){
+function MyComponent({allItemsArray, handleShopAdd}){
   
     
     return(
@@ -11,12 +11,13 @@ function MyComponent({allItemsArray}){
     <Row>
     {allItemsArray.slice(0,3).map(item =>  {
       return (
-        <Col>
+        <Col  key={item.key}>
           <MyCardItem
           name={item.name}
           url={item.url}
           price={item.price}
           id={item.id}
+          handleShopAdd={handleShopAdd}
                 />
         </Col>)
     })
@@ -25,12 +26,14 @@ function MyComponent({allItemsArray}){
     <Row>
     {allItemsArray.slice(3,6).map(item =>  {
       return (
-        <Col>
+        <Col key={item.key}>
           <MyCardItem
           name={item.name}
           url={item.url}
           price={item.price}
           id={item.id}
+          handleShopAdd={handleShopAdd}
+
                 />
         </Col>)
     })
@@ -39,12 +42,14 @@ function MyComponent({allItemsArray}){
     <Row>
     {allItemsArray.slice(6,9).map(item =>  {
       return (
-        <Col>
+        <Col key={item.key}>
           <MyCardItem
           name={item.name}
           url={item.url}
           price={item.price}
           id={item.id}
+          handleShopAdd={handleShopAdd}
+
                 />
         </Col>)
     })
@@ -53,12 +58,13 @@ function MyComponent({allItemsArray}){
     <Row>
     {allItemsArray.slice(9,12).map(item =>  {
       return (
-        <Col>
+        <Col key={item.key}>
           <MyCardItem 
           name={item.name}
           url={item.url}
           price={item.price}
           id={item.id}
+          handleShopAdd={handleShopAdd}
                 />
         </Col>)
     })

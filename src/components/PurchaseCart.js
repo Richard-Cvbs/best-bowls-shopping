@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Offcanvas } from 'react-bootstrap';
+import { Offcanvas, Card, Row, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ShoppingCardItem from "./ShoppingCardItem";
 
 
-function PurchaseCart({show, handleClose}) {
+
+function PurchaseCart({show, handleClose, currentCardItems}) {
     return (
       <>
         <Offcanvas placement='end' show={show} onHide={handleClose}>
@@ -11,8 +13,22 @@ function PurchaseCart({show, handleClose}) {
             <Offcanvas.Title>Your Cart</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            Some text as placeholder. In real life you can have the elements you
-            have chosen. Like, text, images, lists, etc.
+          <Container>
+              {
+                  currentCardItems.map( item =>{
+                      return (
+                         <Row>
+                             <ShoppingCardItem 
+                             name = {item.name}
+                             url = {item.url}
+                             price = {item.price}
+                             id = {item.id}
+                             />
+                         </Row>
+                      )
+                  })
+              }
+          </Container>
           </Offcanvas.Body>
         </Offcanvas>
       </>

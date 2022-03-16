@@ -5,3 +5,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Description
 
 Simple Store page with functioning cart made with React and React-Bootstrap.
+
+Check the running site at : <https://best-bowls.herokuapp.com/>

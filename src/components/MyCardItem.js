@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Button, Card, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function MyCardItem({name, url, price}){
+function MyCardItem({name, url, price, id}){
     return(
-  <Card className="p-2" style={{ width: '18rem' }}>
+  <Card key={id} className="p-2" style={{ width: '18rem' }}>
       <Card.Img variant="top" src={url}/>
       <Card.Body>
       <Card.Title className='text-center'>
